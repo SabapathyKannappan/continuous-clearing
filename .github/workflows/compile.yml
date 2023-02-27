@@ -35,6 +35,7 @@ jobs:
     - name: Gitversion
       id: gitversion
       run: |
+        set ACTIONS_ALLOW_UNSECURE_COMMANDS=true
         dotnet tool install --global GitVersion.Tool --version 5.3.6
         dotnet gitversion /output buildserver /nofetch
         echo %GITVERSION_SEMVER%
